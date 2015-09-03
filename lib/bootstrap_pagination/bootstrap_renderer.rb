@@ -16,7 +16,8 @@ module BootstrapPagination
       end.join(@options[:link_separator])
 
       if @options[:bootstrap].to_i >= 3
-        tag("ul", list_items, class: "pagination")
+        ul_class = @options[:ul_class] || 'pagination'
+        tag("ul", list_items, class: ul_class)
       else
         html_container(tag("ul", list_items))
       end
